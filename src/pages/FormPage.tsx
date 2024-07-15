@@ -16,8 +16,9 @@ const FormPage: FC = () => {
   const actionData = useActionData();
 
   useEffect(() => {
-    if (actionData && actionData.errors) {
-      const { errors } = actionData; //have problem with type this lines
+    if (actionData && (actionData as { errors: any }).errors) {
+      const { errors } = actionData as { errors: any };
+      //have problem with type it correctly
       setFormErrors(errors || {});
     }
   }, [actionData]);
