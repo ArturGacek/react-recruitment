@@ -53,7 +53,11 @@ const FormPage: FC = () => {
         />
         {formErrors.firstName && (
           <p className="text-sm mt-[-.25rem] mb-2">
-            <img src={ErrorIcon} className="pr-1 inline" alt="error icon" />{' '}
+            <img
+              src={ErrorIcon}
+              className="mt-[-.25rem] pr-1 inline"
+              alt="error icon"
+            />{' '}
             {formErrors.firstName}
           </p>
         )}
@@ -66,7 +70,11 @@ const FormPage: FC = () => {
         />
         {formErrors.lastName && (
           <p className="text-sm mt-[-.25rem] mb-2">
-            <img src={ErrorIcon} className="pr-1 inline" alt="error icon" />
+            <img
+              src={ErrorIcon}
+              className="mt-[-.25rem] pr-1 inline"
+              alt="error icon"
+            />
             {formErrors.lastName}
           </p>
         )}
@@ -79,7 +87,11 @@ const FormPage: FC = () => {
         />
         {formErrors.email && (
           <p className="text-sm mt-[-.25rem] mb-2">
-            <img src={ErrorIcon} className="pr-1 inline" alt="error icon" />
+            <img
+              src={ErrorIcon}
+              className="mt-[-.25rem] pr-1 inline"
+              alt="error icon"
+            />
             {formErrors.email}
           </p>
         )}
@@ -90,7 +102,11 @@ const FormPage: FC = () => {
         />
         {formErrors.fileInput && (
           <p className="text-sm mt-[-.25rem] mb-2">
-            <img src={ErrorIcon} className="pr-1 inline" alt="error icon" />
+            <img
+              src={ErrorIcon}
+              className="mt-[-.25rem] pr-1 inline"
+              alt="error icon"
+            />
             {formErrors.fileInput}
           </p>
         )}
@@ -110,13 +126,21 @@ const FormPage: FC = () => {
           />
           {formErrors.selectedDate && (
             <p className="text-sm mt-[-.25rem] mb-2">
-              <img src={ErrorIcon} className="pr-1 inline" alt="error icon" />
+              <img
+                src={ErrorIcon}
+                className="mt-[-.25rem] pr-1 inline"
+                alt="error icon"
+              />
               {formErrors.selectedDate}
             </p>
           )}
           {formErrors.selectedTime && (
             <p className="text-sm mt-[-.25rem] mb-2">
-              <img src={ErrorIcon} className=" pr-1 inline" alt="error icon" />
+              <img
+                src={ErrorIcon}
+                className="mt-[-.25rem] pr-1 inline"
+                alt="error icon"
+              />
               {formErrors.selectedTime}
             </p>
           )}

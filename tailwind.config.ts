@@ -16,7 +16,11 @@ export default {
       error: 'var(--error)',
       'error-light': 'var(--error-light)',
     },
-    extend: {},
+    extend: {
+      maxWidth: {
+        '324': '324px',
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

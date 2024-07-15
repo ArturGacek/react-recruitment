@@ -95,7 +95,7 @@ const Calendar: React.FC<CalendarProps> = ({
     const emptyDays = Array(startDay - 1)
       .fill(null)
       .map((_, index) => (
-        <div key={`empty-${index}`} className="h-10 w-10"></div>
+        <div key={`empty-${index}`} className="h-11 w-11"></div>
       ));
 
     return [...emptyDays, ...days];
@@ -115,7 +115,7 @@ const Calendar: React.FC<CalendarProps> = ({
         }`}
       >
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="w-full md:w-auto">
+          <div className="w-full md:max-w-324 md:w-auto">
             <label className="block mb-2  text-text-normal">Date</label>
             <div className="bg-background-white p-4 rounded-lg border border-border-color">
               <div className="flex justify-between items-center mb-4">

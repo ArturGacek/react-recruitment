@@ -11,3 +11,6 @@ Build/Run Requirements: NPM
 api-ninjas from recruitment task
 
 /_ Then start React _/ npm run dev
+
+The app is deployed and can be viewed at
+https://react1-recruitment.netlify.app/

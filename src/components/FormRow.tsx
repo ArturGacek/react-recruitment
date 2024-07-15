@@ -26,7 +26,9 @@ const FormRow: React.FC<IFormRow> = ({
         name={name}
         onChange={onChange}
         className={`form-input h-12 w-full px-3 py-2 border rounded-lg transition duration-300 focus:outline-none focus:border-primary ${
-          hasError ? 'border-error bg-error-light' : 'border-border-color'
+          hasError
+            ? 'border-error bg-error-light border-2'
+            : 'border-border-color'
         }`}
       />
     </div>

@@ -58,7 +58,9 @@ const Dropzone: React.FC<DropZoneProps> = ({ onChange, hasError }) => {
     }
   };
 
-  const borderColor = hasError ? 'border-error' : 'border-border-color';
+  const borderColor = hasError
+    ? 'border-error border-2'
+    : 'border-border-color';
   const backgroundColor = hasError ? 'bg-error-light' : 'bg-background-white';
 
   return (
