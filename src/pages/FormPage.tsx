@@ -49,6 +49,7 @@ const FormPage: FC = () => {
           name="firstName"
           labelText="FirstName"
           onChange={handleInputChange}
+          hasError={!!formErrors.firstName}
         />
         {formErrors.firstName && (
           <p className="text-sm mt-[-.25rem] mb-2">
@@ -61,6 +62,7 @@ const FormPage: FC = () => {
           name="lastName"
           labelText="Last Name"
           onChange={handleInputChange}
+          hasError={!!formErrors.lastName}
         />
         {formErrors.lastName && (
           <p className="text-sm mt-[-.25rem] mb-2">
@@ -73,6 +75,7 @@ const FormPage: FC = () => {
           name="email"
           labelText="Email Address"
           onChange={handleInputChange}
+          hasError={!!formErrors.email}
         />
         {formErrors.email && (
           <p className="text-sm mt-[-.25rem] mb-2">
@@ -81,7 +84,10 @@ const FormPage: FC = () => {
           </p>
         )}
         <Slider min={8} max={100} label="Age" />
-        <DropZone onChange={() => handleComponentChange('fileInput')} />
+        <DropZone
+          onChange={() => handleComponentChange('fileInput')}
+          hasError={!!formErrors.fileInput}
+        />
         {formErrors.fileInput && (
           <p className="text-sm mt-[-.25rem] mb-2">
             <img src={ErrorIcon} className="pr-1 inline" alt="error icon" />

@@ -1,15 +1,23 @@
-import React, { useState, useEffect, DragEvent, ChangeEvent } from 'react';
+import React, {
+  useState,
+  useEffect,
+  DragEvent,
+  ChangeEvent,
+  useRef,
+} from 'react';
 import DeleteIconBlack from '../assets/icons/delete-icon-black.svg';
 import DeleteIconRed from '../assets/icons/delete-icon-red.svg';
 import { useActionData } from 'react-router-dom';
 
 interface DropZoneProps {
   onChange: (name: string) => void;
+  hasError?: boolean;
 }
 
-const Dropzone: React.FC<DropZoneProps> = ({ onChange }) => {
+const Dropzone: React.FC<DropZoneProps> = ({ onChange, hasError }) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const actionData = useActionData();
 
   useEffect(() => {
@@ -45,13 +53,19 @@ const Dropzone: React.FC<DropZoneProps> = ({ onChange }) => {
 
   const handleDelete = () => {
     setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ''; // Reset the input file value
+    }
   };
+
+  const borderColor = hasError ? 'border-error' : 'border-border-color';
+  const backgroundColor = hasError ? 'bg-error-light' : 'bg-background-white';
 
   return (
     <div className="mb-4">
       <label className="mb-2 block">Photo</label>
       <div
-        className="border border-border-color bg-background-white rounded-lg p-5 cursor-pointer transition-colors duration-300 h-24 flex justify-center items-center"
+        className={`border ${borderColor} ${backgroundColor} rounded-lg p-5 cursor-pointer transition-colors duration-300 h-24 flex justify-center items-center`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
@@ -59,6 +73,7 @@ const Dropzone: React.FC<DropZoneProps> = ({ onChange }) => {
           type="file"
           id="file-input"
           name="fileInput"
+          ref={fileInputRef}
           onChange={handleFileInputChange}
           className="hidden"
           multiple={false}

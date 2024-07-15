@@ -5,9 +5,16 @@ interface IFormRow {
   name: string;
   labelText: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  hasError?: boolean;
 }
 
-const FormRow: React.FC<IFormRow> = ({ type, name, labelText, onChange }) => {
+const FormRow: React.FC<IFormRow> = ({
+  type,
+  name,
+  labelText,
+  onChange,
+  hasError,
+}) => {
   return (
     <div className="mb-3">
       <label htmlFor={name} className="block primary mb-2">
@@ -18,7 +25,9 @@ const FormRow: React.FC<IFormRow> = ({ type, name, labelText, onChange }) => {
         id={name}
         name={name}
         onChange={onChange}
-        className="form-input h-12 w-full px-3 py-2 border border-border-color rounded-lg transition duration-300 focus:outline-none focus:border-primary"
+        className={`form-input h-12 w-full px-3 py-2 border rounded-lg transition duration-300 focus:outline-none focus:border-primary ${
+          hasError ? 'border-error bg-error-light' : 'border-border-color'
+        }`}
       />
     </div>
   );
