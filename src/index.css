@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-normal: #000853;
+  --text-white: #ffffff;
+  --background: #f0eaf8;
+  --background-white: #ffffff;
+  --primary: #761be4;
+  --primary-hover: #6a19cd;
+  --primary-light: #cbb6e5;
+  --secondary: #898da9;
+  --border-color: #cbb6e5;
+  --error: #ed4545;
+  --error-light: #feecec;
+}
+
+body {
+  color: var(--text-normal);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #6200ea;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  z-index: 10;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #6200ea;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  z-index: 10;
+}
+
+.tooltip:after {
+  left: 100%;
+  top: -14px;
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border: 10px solid rgba(255, 255, 255, 0);
+  border-bottom-color: white;
+  margin-left: -26px;
+}
+.tooltip::before {
+  content: '';
+  position: absolute;
+  transform: rotate(45deg);
+  pointer-events: none;
+  width: 6px;
+  height: 6px;
+  top: -4px;
+  left: 15px;
+  z-index: -1;
+  box-shadow: 0 0 1px rgb(118, 27, 228);
+}
